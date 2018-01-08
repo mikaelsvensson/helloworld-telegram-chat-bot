@@ -29,9 +29,9 @@ Sign in to Telegram and do this:
 - After a couple of questions you will get a message starting with "Done! Congratulations...". This message will contain your API key (i.e. the password for your bot).
 - Save the API key in a text file on your computer, for later use.
 
-### Hello World Sample Bot
+### Get the source code
 
-[Download and extract code to a new folder](https://github.com/nicevo/helloworld-klarna/archive/step-telegram.zip).
+[Download the Hello World bot source code](https://github.com/mikaelsvensson/helloworld-telegram-chat-bot/archive/master.zip) and extract it to a new folder.
 
 ### Create the app in Heroku
 
@@ -50,17 +50,19 @@ You will now see something like this:
     
 In the above example, the application's name is _powerful-everglades-32132_. You will see another name, and that is your app's name, which you should use instead of ```NAME_OF_YOUR_HEROKU_APPLICATION``` further down in this tutorial. Additionally, the application's address is https://powerful-everglades-32132.herokuapp.com. 
     
-Open `init_webhook.py` and set the ```HOST_NAME``` constant to the app's address. Skip the ```/``` at the end. It should look something like this:
-
-    HOST_NAME = 'https://powerful-everglades-32132.herokuapp.com'
-
 Make your API key, sent to you by BotFather, available to your Heroku application by entering this command in your terminal:
 
 ```
 heroku config:set TELEGRAM_BOT_APIKEY=your-bot-api-key --app NAME_OF_YOUR_HEROKU_APPLICATION
 ```
 
-Re-deploy to Heroku using the same command as before:
+### Get it working
+
+Open `init_webhook.py` and set the ```HOST_NAME``` constant to the app's address. Skip the ```/``` at the end. It should look something like this:
+
+    HOST_NAME = 'https://powerful-everglades-32132.herokuapp.com'
+
+Deploy to Heroku using this command:
 
 ```
 heroku builds:create --app NAME_OF_YOUR_HEROKU_APPLICATION
@@ -77,6 +79,12 @@ Verify that it sends back everything you send to it.
 In `app/views.py` there is a function called `process_text`. Use that to change the text and make the bot smarter.
 
 If you want something to get you started you can try these [ideas on chat bots](./bots-ideas.md).
+
+Remember to run this command after you change something, otherwise the bot will not see your changes: 
+
+```
+heroku builds:create --app NAME_OF_YOUR_HEROKU_APPLICATION
+```
 
 ## A Closer Look
 
