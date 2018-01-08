@@ -48,27 +48,29 @@ You will now see something like this:
     Creating app... done, ⬢ powerful-everglades-32132
     https://powerful-everglades-32132.herokuapp.com/ | https://git.heroku.com/powerful-everglades-32132.git
     
-The name of the app in this example was _powerful-everglades-32132_.
+In the above example, the application's name is _powerful-everglades-32132_. You will see another name, and that is your app's name, which you should use instead of ```NAME_OF_YOUR_HEROKU_APPLICATION``` further down in this tutorial. Additionally, the application's address is https://powerful-everglades-32132.herokuapp.com. 
+    
+Open `init_webhook.py` and set the ```HOST_NAME``` constant to the app's address. Skip the ```/``` at the end. It should look something like this:
 
-Open `init_webhook.py` and make sure the URL of your application name is in the `set_webhook` call. It should look 
-something like this, using our example above:
-
-    https://powerful-everglades-32132.herokuapp.com
+    HOST_NAME = 'https://powerful-everglades-32132.herokuapp.com'
 
 Make your API key, sent to you by BotFather, available to your Heroku application by entering this command in your terminal:
 
 ```
 heroku config:set TELEGRAM_BOT_APIKEY=your-bot-api-key --app NAME_OF_YOUR_HEROKU_APPLICATION
 ```
-- Re-deploy to Heroku using the same command as before:
+
+Re-deploy to Heroku using the same command as before:
+
 ```
 heroku builds:create --app NAME_OF_YOUR_HEROKU_APPLICATION
 ```
 
-- Start chatting with your bot. You should now be able to find your bot in Telegram by searching for it using the name you sent to BotFather earlier. 
-- Verify that it sends back everything you send to it.
+Start chatting with your bot. You should now be able to find your bot in Telegram by searching for it using the name you sent to BotFather earlier. 
 
-You now have a fully functional bot!
+Verify that it sends back everything you send to it.
+
+**You now have a fully functional bot! Congratulations!**
 
 ## Next steps
 
