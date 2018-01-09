@@ -1,16 +1,47 @@
-import time
-from flask import render_template, request, Response
-from twx.botapi import Message
+import json
+import os
+
+import pokebase as pb
+from flask import request, Response
+from fuzzywuzzy import process
+from twx.botapi import Message, InputFile, InputFileInfo
+
 from app import application
 from app import bot
-import json
 
 
 def process_text(message):
-    incomming_text = message.text
-    # Your code goes here
-    my_response = incomming_text
-    return my_response
+    possible_name = message.text
+
+    response = {}
+
+    # Get list of pokemons from precompiled file
+    current_path = os.path.dirname(os.path.realpath(__file__))
+    print (current_path + '/../pokemons.json')
+    with open(current_path + '/../pokemons.json') as pokemons_file:
+        pokemons = json.load(pokemons_file)
+
+    # get only the name arry from the json
+    pnames = [x['name'] for x in pokemons['results']]
+
+    # initialise name and caption
+    name = possible_name
+    response["caption"] = possible_name
+
+    # fix name and caption if it does not match
+    if possible_name not in pnames:
+        fuzzy_result = process.extractOne(possible_name, pnames)
+        name = fuzzy_result[0]
+        response["caption"] = "Did you mean: " + name
+        print ("fuzzy result", fuzzy_result)
+
+    # get pokemon image (sprite)
+    pb.api.set_cache(".")
+    poke = pb.pokemon(name)
+    path = pb.pokemon_sprite(poke.id).path
+    response["photo"] = "sprite/pokemon/" + str(poke.id) + ".png"
+
+    return response
 
 
 @application.route('/incoming', methods=['POST'])
@@ -22,19 +53,23 @@ def incoming():
     try:
         print('Received this message from user %d (%s): %s' % (msg.sender.id, msg.sender.first_name, msg.text))
         chat_id = msg.chat.id
+        msgid = msg.message_id
         print('Responding to chat %i using token %s' % (chat_id, bot.token))
-        response_text = process_text(msg)
-        resp = bot.send_message(
-            chat_id=chat_id,
-            text=response_text,
-            parse_mode=None,
-            disable_web_page_preview=None,
-            reply_to_message_id=None,
-            reply_markup=None,
-            disable_notification=False).wait()
-    except Exception as e:
-        print("ERROR: ", e.message)
+        response = process_text(msg)
 
-    print("send_message returned ", resp)
+        with open(response["photo"], 'rb') as fp:
+            file_info = InputFileInfo(response["photo"], fp, 'image/png')
+
+            photo_file = InputFile('photo', file_info)
+
+            resp = bot.send_photo(
+                chat_id=chat_id,
+                photo=photo_file,
+                caption=(response["caption"]),
+                reply_to_message_id=msgid
+            ).wait()
+
+    except Exception as e:
+        print("ERROR: ", e)
 
     return Response(status=200)
