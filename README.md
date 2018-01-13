@@ -30,7 +30,7 @@ Sign in to Telegram and do this:
 - Find the bot BotFather in Telegram by searching for it.
 - Click on BotFather and start chatting with "him" by clicking the Start button at the bottom of the chat window (or 
   by sending him the message `/newbot`).
-- Answer BotFather's questions.
+- Answer BotFather's questions. Having a hard time figuring out a name for your bot? Chat with the bot [hellobotnamebot](t.me/hellobotnamebot) if you want suggestions.
 - After a couple of questions you will get a message starting with "Done! Congratulations...". This message will contain 
   your API key (shown in red). The API key is the password of your bot. 
 - Save the API key in a text file on your computer, for later use.
