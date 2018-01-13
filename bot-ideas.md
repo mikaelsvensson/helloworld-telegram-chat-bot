@@ -2,8 +2,7 @@
 
 Want inspiration and/or code samples to take your ideas to the next level? Check out the ones below! 
 
-## Weather Bot
-[![Level: medium](https://img.shields.io/badge/Level-medium-orange.svg)](https://github.com/seatgeek/fuzzywuzzy)
+## Weather Bot [![Level: medium](https://img.shields.io/badge/Level-medium-orange.svg)](https://github.com/seatgeek/fuzzywuzzy)
 
 The weather bot tells you what the weather is like in any city it has data for! 
 
@@ -16,8 +15,7 @@ Further improvements:
 - Sending in the time (today, tomorrow or 5days)
 - Responding with emoticons if it is sunny or cloudy ... 
 
-## Pokemon, Starwars or Superhero Picture Bot
-[![Level: hard](https://img.shields.io/badge/Level-hard-green.svg)](https://github.com/seatgeek/fuzzywuzzy)
+## Pokemon, Starwars or Superhero Picture Bot [![Level: hard](https://img.shields.io/badge/Level-hard-red.svg)](https://github.com/seatgeek/fuzzywuzzy)
 
 [![API: Pokemons](https://img.shields.io/badge/APIs-pokemons-1abc9c.svg)](https://github.com/seatgeek/fuzzywuzzy)
 [![Fuzzy matching](https://img.shields.io/badge/Fuzzy%20matching-fuzzywuzzy-1abc9c.svg)](https://github.com/seatgeek/fuzzywuzzy)
