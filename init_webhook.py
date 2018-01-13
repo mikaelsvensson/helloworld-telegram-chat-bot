@@ -6,7 +6,7 @@ from twx.botapi import InputFileInfo, InputFile
 from app import application
 from app import bot
 
-HOST_NAME = 'https://NAME_OF_YOUR_HEROKU_APPLICATION.herokuapp.com'
+HOST_NAME = 'https://telegram-botnamebot.herokuapp.com'
 
 
 def init_heroku_logging():
