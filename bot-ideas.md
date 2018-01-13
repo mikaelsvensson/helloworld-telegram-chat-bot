@@ -1,24 +1,35 @@
 # Bot Ideas
 
-## Pokemon, Starwars or Superhero Picture Bot
-
-Look at https://github.com/mikaelsvensson/helloworld-telegram-chat-bot.git/...pokemons... for an example of... 
-
-Using...Pokemon API: https://pokeapi.co/ and https://github.com/GregHilmes/pokebase
-
-Other API:
-
-* Marvel's superhero API: https://developer.marvel.com/docs
-* Starwars API: https://swapi.co/ and https://github.com/phalt/swapi-python
+Want inspiration and/or code samples to take your ideas to the next level? Check out the ones below! 
 
 ## Weather Bot
+[![Level: medium](https://img.shields.io/badge/Level-medium-orange.svg)](https://github.com/seatgeek/fuzzywuzzy)
 
-What is the weather like in city ______? 
+The weather bot tells you what the weather is like in any city it has data for! 
 
-API:
-http://api.openweathermap.org/data/2.5/forecast?q=Stockholm&APPID=07747cbb1cda6215ecc8296b8a7f1582
+[Download code](https://github.com/mikaelsvensson/helloworld-telegram-chat-bot/archive/weather.zip)
 
-http://openweathermap.org/img/w/01d.png
+It uses the [openweathermap](http://api.openweathermap.org) api.
+
+Further improvements:
+
+- Sending in the time (today, tomorrow or 5days)
+- Responding with emoticons if it is sunny or cloudy ... 
+
+## Pokemon, Starwars or Superhero Picture Bot
+[![Level: hard](https://img.shields.io/badge/Level-hard-green.svg)](https://github.com/seatgeek/fuzzywuzzy)
+
+[![API: Pokemons](https://img.shields.io/badge/APIs-pokemons-1abc9c.svg)](https://github.com/seatgeek/fuzzywuzzy)
+[![Fuzzy matching](https://img.shields.io/badge/Fuzzy%20matching-fuzzywuzzy-1abc9c.svg)](https://github.com/seatgeek/fuzzywuzzy)
+
+This example bot takes what you type and matches it with a pokemon name. It will then respond with the pokemon picture. 
+[Download code](https://github.com/mikaelsvensson/helloworld-telegram-chat-bot/archive/pokemons.zip)
+
+This is using a [Pokemon API](https://pokeapi.co/) through a python library called [pokebase](https://github.com/GregHilmes/pokebase)
+
+Do not like pokemos? Other APIs that could be used:
+* [Marvel's superhero API](https://developer.marvel.com/docs)
+* [Starwars API](https://swapi.co) and respective python wrapper [swapi-python](https://github.com/phalt/swapi-python)
 
 ## Quiz Bot
 
