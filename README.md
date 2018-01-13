@@ -55,8 +55,6 @@ Run this command (the command may ask you for your Heroku username and password)
 ```
 heroku apps:create NAME_OF_YOUR_HEROKU_APPLICATION
 ```
-
-The `heroku apps:create` command shows an error about "tar" not being installed on some computers. You can safely ignore that error.
  
 Make your API key, sent to you by BotFather, available to your Heroku application by entering this command in your terminal:
 
@@ -94,6 +92,8 @@ Run this command after you change something, otherwise the bot will not see your
 ```
 heroku builds:create --app NAME_OF_YOUR_HEROKU_APPLICATION
 ```
+
+The `heroku builds:create` command shows an error about "tar" not being installed on some computers. You can safely ignore that error.
 
 ## A Closer Look
 
