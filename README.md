@@ -45,7 +45,7 @@ and extract it to a new folder.
 Open a terminal window.
 
 Go to the folder when you extracted the source code. On a Mac, you _probably_ can do this by entering this command into
-the terminal: `cd Downloads/helloworld-telegram-chat-bot-master`
+the terminal: `cd Downloads/helloworld-telegram-chat-bot`
 
 You must now create an "application" in Heroku. This application must have a name. The name of your 
 application in Heroku does not have to match the name of your bot in Telegram, but it is convenient. In the commands 
@@ -56,8 +56,6 @@ Run this command (the command may ask you for your Heroku username and password)
 heroku apps:create NAME_OF_YOUR_HEROKU_APPLICATION
 ```
 
-The `heroku apps:create` command shows an error about "tar" not being installed on some computers. You can safely ignore that error.
- 
 Make your API key, sent to you by BotFather, available to your Heroku application by entering this command in your terminal:
 
 ```
@@ -75,6 +73,9 @@ Deploy to Heroku using these commands:
 heroku builds:create --app NAME_OF_YOUR_HEROKU_APPLICATION
 heroku ps:scale web=1 --app NAME_OF_YOUR_HEROKU_APPLICATION
 ```
+
+The `heroku builds:create` command shows an error about "tar" not being installed on some computers. You can safely ignore that error.
+ 
 
 Within a minute or so, you should now be able to find your bot in Telegram by searching for it using the name you 
 sent to BotFather earlier. 
