@@ -56,8 +56,6 @@ Kör det här kommandot (kommandet kommer eventuellt fråga efter ditt Heroku-an
 ```
 heroku apps:create NAME_OF_YOUR_HEROKU_APPLICATION
 ```
-
-Kommandot `heroku apps:create` visar ibland en varning om att "tar" inte är installerat. Du kan lugnt strunta i den varningen.
  
 Gör nu din API-nyckel, den du fick från BotFather, tillgänglig för din Heroku-applikation genom att göra det här 
 kommandot i din terminal:
@@ -77,6 +75,7 @@ Ladda nu upp din bot till Heroku genom att köra de här kommandona:
 heroku builds:create --app NAME_OF_YOUR_HEROKU_APPLICATION
 heroku ps:scale web=1 --app NAME_OF_YOUR_HEROKU_APPLICATION
 ```
+
 Snart, inom en minut eller så, kommer du kunna hitta din bot i Telegram genom att sök efter den i Telegram.
 
 Börja chatta med din bot. Skickar den tillbaka vad du sänder till den? Bra.
@@ -94,6 +93,8 @@ Kör det här kommandot efter att du ändrat något, annars kommer din bot inte 
 ```
 heroku builds:create --app NAME_OF_YOUR_HEROKU_APPLICATION
 ```
+
+Kommandot `heroku builds:create` visar ibland en varning om att "tar" inte är installerat. Du kan lugnt strunta i den varningen.
 
 ## En närmare titt
 
